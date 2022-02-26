@@ -1,0 +1,571 @@
+#VRML_SIM R2022a utf8
+WorldInfo {
+}
+Viewpoint {
+  orientation -0.1574333681087839 -0.47415601303239335 0.8662510086061366 5.551159210320913
+  position -1.0404479507202586 0.7574497755267486 0.5907039669145581
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+Floor {
+}
+Robot {
+  translation 0 0 0.175359
+  rotation 1 0 0 0
+  children [
+    DEF body Solid {
+      children [
+        DEF RR_LEG Transform {
+          translation 0.1 -0.15 0
+          rotation 1 0 0 1.5708
+          children [
+            DEF rr_kuan HingeJoint {
+              jointParameters HingeJointParameters {
+                axis 0 0 1
+              }
+              device [
+                DEF rr_kuan_motor RotationalMotor {
+                  name "rr_kuan_motor"
+                }
+                DEF rr_kuan_position_sensor PositionSensor {
+                  name "rr_kuan_position_sensor"
+                }
+              ]
+              endPoint DEF rr_kuan Solid {
+                children [
+                  DEF rr_thigh Transform {
+                    translation 0 -0.04 0.06
+                    rotation 1 0 0 0.6
+                    children [
+                      DEF rr_thigh HingeJoint {
+                        jointParameters HingeJointParameters {
+                          anchor 0 0 -0.06
+                        }
+                        device [
+                          DEF rr_thigh_motor RotationalMotor {
+                            name "rr_thigh_motor"
+                          }
+                          DEF rr_thigh_position_sensor PositionSensor {
+                            name "rr_thigh_position_sensor"
+                          }
+                        ]
+                        endPoint DEF rr_thigh Solid {
+                          rotation 1 0 0 0
+                          children [
+                            DEF rr_crus Transform {
+                              translation 0 -0.07 0.04
+                              rotation 1 0 0 1.9
+                              children [
+                                DEF rr_crus HingeJoint {
+                                  jointParameters HingeJointParameters {
+                                    anchor 0 0 -0.08
+                                  }
+                                  device [
+                                    RotationalMotor {
+                                      name "rr_crus_motor"
+                                    }
+                                    DEF rr_crus_position_sensor PositionSensor {
+                                      name "rr_crus_position_sensor"
+                                    }
+                                  ]
+                                  endPoint DEF rr_crus Solid {
+                                    rotation 1 0 0 0
+                                    children [
+                                      DEF rr_foot Transform {
+                                        translation 0 0 0.07
+                                        children [
+                                          DEF rr_foot Solid {
+                                            children [
+                                              DEF rr_touch_sensor TouchSensor {
+                                                name "rr_touch_sensor"
+                                              }
+                                            ]
+                                            boundingObject Sphere {
+                                              radius 0.015
+                                            }
+                                            physics Physics {
+                                            }
+                                          }
+                                        ]
+                                      }
+                                      DEF rr_crus Shape {
+                                        appearance Appearance {
+                                          material Material {
+                                            diffuseColor 0.533333 0.541176 0.521569
+                                          }
+                                        }
+                                        geometry Capsule {
+                                          height 0.14
+                                          radius 0.015
+                                        }
+                                      }
+                                    ]
+                                    boundingObject USE rr_crus
+                                    physics Physics {
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                            DEF rr_thigh Shape {
+                              appearance Appearance {
+                                material Material {
+                                  diffuseColor 0.333333 0.341176 0.32549
+                                }
+                              }
+                              geometry Capsule {
+                                height 0.12
+                                radius 0.015
+                              }
+                            }
+                          ]
+                          boundingObject USE rr_thigh
+                          physics Physics {
+                          }
+                        }
+                      }
+                    ]
+                  }
+                  DEF rr_kuan Shape {
+                    appearance Appearance {
+                      material Material {
+                        diffuseColor 0.447059 0.623529 0.811765
+                      }
+                    }
+                    geometry Capsule {
+                      height 0.02
+                      radius 0.02
+                    }
+                  }
+                ]
+                name "rr"
+                boundingObject USE rr_kuan
+                physics Physics {
+                }
+              }
+            }
+          ]
+        }
+        DEF LR_LEG Transform {
+          translation -0.1 -0.15 0
+          rotation 1 0 0 1.5708
+          children [
+            DEF lr_kuan HingeJoint {
+              jointParameters HingeJointParameters {
+                axis 0 0 1
+              }
+              device [
+                DEF lr_kuan_motor RotationalMotor {
+                  name "lr_kuan_motor"
+                }
+                DEF lr_kuan_position_sensor PositionSensor {
+                  name "lr_kuan_position_sensor"
+                }
+              ]
+              endPoint DEF lr_kuan Solid {
+                children [
+                  DEF lr_thigh Transform {
+                    translation 0 -0.04 0.06
+                    rotation 1 0 0 0.6
+                    children [
+                      DEF lr_thigh HingeJoint {
+                        jointParameters HingeJointParameters {
+                          anchor 0 0 -0.06
+                        }
+                        device [
+                          DEF lr_thigh_motor RotationalMotor {
+                            name "lr_thigh_motor"
+                          }
+                          DEF lr_thigh_position_sensor PositionSensor {
+                            name "lr_thigh_position_sensor"
+                          }
+                        ]
+                        endPoint DEF lr_thigh Solid {
+                          rotation 1 0 0 0
+                          children [
+                            DEF lr_crus Transform {
+                              translation 0 -0.07 0.04
+                              rotation 1 0 0 1.9
+                              children [
+                                DEF lr_crus HingeJoint {
+                                  jointParameters HingeJointParameters {
+                                    anchor 0 0 -0.08
+                                  }
+                                  device [
+                                    RotationalMotor {
+                                      name "lr_crus_motor"
+                                    }
+                                    DEF lr_crus_position_sensor PositionSensor {
+                                      name "lr_crus_position_sensor"
+                                    }
+                                  ]
+                                  endPoint DEF lr_crus Solid {
+                                    rotation 1 0 0 0
+                                    children [
+                                      DEF lr_foot Transform {
+                                        translation 0 0 0.07
+                                        children [
+                                          DEF lr_foot Solid {
+                                            children [
+                                              DEF lr_touch_sensor TouchSensor {
+                                                name "lr_touch_sensor"
+                                              }
+                                            ]
+                                            boundingObject Sphere {
+                                              radius 0.015
+                                            }
+                                            physics Physics {
+                                            }
+                                          }
+                                        ]
+                                      }
+                                      DEF lr_crus Shape {
+                                        appearance Appearance {
+                                          material Material {
+                                            diffuseColor 0.533333 0.541176 0.521569
+                                          }
+                                        }
+                                        geometry Capsule {
+                                          height 0.14
+                                          radius 0.015
+                                        }
+                                      }
+                                    ]
+                                    boundingObject USE lr_crus
+                                    physics Physics {
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                            DEF lr_thigh Shape {
+                              appearance Appearance {
+                                material Material {
+                                  diffuseColor 0.333333 0.341176 0.32549
+                                }
+                              }
+                              geometry Capsule {
+                                height 0.12
+                                radius 0.015
+                              }
+                            }
+                          ]
+                          boundingObject USE lr_thigh
+                          physics Physics {
+                          }
+                        }
+                      }
+                    ]
+                  }
+                  DEF lr_kuan Shape {
+                    appearance Appearance {
+                      material Material {
+                        diffuseColor 0.447059 0.623529 0.811765
+                      }
+                    }
+                    geometry Capsule {
+                      height 0.02
+                      radius 0.02
+                    }
+                  }
+                ]
+                name "lr"
+                boundingObject USE lr_kuan
+                physics Physics {
+                }
+              }
+            }
+          ]
+        }
+        DEF RF_LEG Transform {
+          translation 0.1 0.15 0
+          rotation 1 0 0 1.5708
+          children [
+            DEF rf_kuan HingeJoint {
+              jointParameters HingeJointParameters {
+                axis 0 0 1
+              }
+              device [
+                DEF rf_kuan_motor RotationalMotor {
+                  name "rf_kuan_motor"
+                }
+                DEF rf_kuan_position_sensor PositionSensor {
+                  name "rf_kuan_position_sensor"
+                }
+              ]
+              endPoint DEF rf_kuan Solid {
+                children [
+                  DEF rf_thigh Transform {
+                    translation 0 -0.04 0.06
+                    rotation 1 0 0 0.6
+                    children [
+                      DEF rf_thigh HingeJoint {
+                        jointParameters HingeJointParameters {
+                          anchor 0 0 -0.06
+                        }
+                        device [
+                          DEF rf_thigh_motor RotationalMotor {
+                            name "rf_thigh_motor"
+                          }
+                          DEF rf_thigh_position_sensor PositionSensor {
+                            name "rf_thigh_position_sensor"
+                          }
+                        ]
+                        endPoint DEF rf_thigh Solid {
+                          rotation 1 0 0 0
+                          children [
+                            DEF rf_crus Transform {
+                              translation 0 -0.07 0.04
+                              rotation 1 0 0 1.9
+                              children [
+                                DEF rf_crus HingeJoint {
+                                  jointParameters HingeJointParameters {
+                                    anchor 0 0 -0.08
+                                  }
+                                  device [
+                                    DEF rf_crus_motor RotationalMotor {
+                                      name "rf_crus_motor"
+                                    }
+                                    DEF rf_crus_position_sensor PositionSensor {
+                                      name "rf_crus_position_sensor"
+                                    }
+                                  ]
+                                  endPoint DEF rf_crus Solid {
+                                    rotation 1 0 0 0
+                                    children [
+                                      DEF rf_foot Transform {
+                                        translation 0 0 0.07
+                                        children [
+                                          DEF rf_foot Solid {
+                                            children [
+                                              DEF rf_touch_sensor TouchSensor {
+                                                name "rf_touch_sensor"
+                                              }
+                                            ]
+                                            boundingObject Sphere {
+                                              radius 0.015
+                                            }
+                                            physics Physics {
+                                            }
+                                          }
+                                        ]
+                                      }
+                                      DEF rf_crus Shape {
+                                        appearance Appearance {
+                                          material Material {
+                                            diffuseColor 0.533333 0.541176 0.521569
+                                          }
+                                        }
+                                        geometry Capsule {
+                                          height 0.14
+                                          radius 0.015
+                                        }
+                                      }
+                                    ]
+                                    boundingObject USE rf_crus
+                                    physics Physics {
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                            DEF rf_thigh Shape {
+                              appearance Appearance {
+                                material Material {
+                                  diffuseColor 0.333333 0.341176 0.32549
+                                }
+                              }
+                              geometry Capsule {
+                                height 0.12
+                                radius 0.015
+                              }
+                            }
+                          ]
+                          boundingObject USE rf_thigh
+                          physics Physics {
+                          }
+                        }
+                      }
+                    ]
+                  }
+                  DEF rf_kuan Shape {
+                    appearance Appearance {
+                      material Material {
+                        diffuseColor 0.447059 0.623529 0.811765
+                      }
+                    }
+                    geometry Capsule {
+                      height 0.02
+                      radius 0.02
+                    }
+                  }
+                ]
+                name "rf_kuan"
+                boundingObject USE rf_kuan
+                physics Physics {
+                }
+              }
+            }
+          ]
+        }
+        DEF LF_LEG Transform {
+          translation -0.1 0.15 0
+          rotation 1 0 0 1.5708
+          children [
+            DEF lf_kuan HingeJoint {
+              jointParameters HingeJointParameters {
+                axis 0 0 1
+              }
+              device [
+                DEF lf_kuan_motor RotationalMotor {
+                  name "lf_kuan_motor"
+                }
+                DEF lf_kuan_position_sensor PositionSensor {
+                  name "lf_kuan_position_sensor"
+                }
+              ]
+              endPoint DEF lf_kuan Solid {
+                children [
+                  DEF lf_thigh Transform {
+                    translation 0 -0.04 0.06
+                    rotation 1 0 0 0.6
+                    children [
+                      DEF lf_thigh HingeJoint {
+                        jointParameters HingeJointParameters {
+                          position -9.432010976695437e-07
+                          anchor 0 0 -0.06
+                        }
+                        device [
+                          DEF lf_thigh_motor RotationalMotor {
+                            name "lf_thigh_motor"
+                          }
+                          DEF lf_thigh_position_sensor PositionSensor {
+                            name "lf_thigh_position_sensor"
+                          }
+                        ]
+                        endPoint DEF lf_thigh Solid {
+                          translation 0 -6.6174449004242214e-24 -2.0816681711721685e-17
+                          rotation 1 0 0 0
+                          children [
+                            DEF lf_crus Transform {
+                              translation 0 -0.07 0.04
+                              rotation 1 0 0 1.9
+                              children [
+                                DEF lf_crus HingeJoint {
+                                  jointParameters HingeJointParameters {
+                                    anchor 0 0 -0.08
+                                  }
+                                  device [
+                                    RotationalMotor {
+                                      name "lf_crus_motor"
+                                    }
+                                    DEF lf_crus_position_sensor PositionSensor {
+                                      name "lf_crus_position_sensor"
+                                    }
+                                  ]
+                                  endPoint DEF lf_crus Solid {
+                                    rotation 1 0 0 0
+                                    children [
+                                      DEF lf_foot Transform {
+                                        translation 0 0 0.07
+                                        children [
+                                          DEF lf_foot Solid {
+                                            children [
+                                              DEF lf_touch_sensor TouchSensor {
+                                                name "lf_touch_sensor"
+                                              }
+                                            ]
+                                            boundingObject Sphere {
+                                              radius 0.015
+                                            }
+                                            physics Physics {
+                                            }
+                                          }
+                                        ]
+                                      }
+                                      DEF lf_crus Shape {
+                                        appearance Appearance {
+                                          material Material {
+                                            diffuseColor 0.533333 0.541176 0.521569
+                                          }
+                                        }
+                                        geometry Capsule {
+                                          height 0.14
+                                          radius 0.015
+                                        }
+                                      }
+                                    ]
+                                    boundingObject USE lf_crus
+                                    physics Physics {
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                            DEF lf_thigh Shape {
+                              appearance Appearance {
+                                material Material {
+                                  diffuseColor 0.333333 0.341176 0.32549
+                                }
+                              }
+                              geometry Capsule {
+                                height 0.12
+                                radius 0.015
+                              }
+                            }
+                          ]
+                          boundingObject USE lf_thigh
+                          physics Physics {
+                          }
+                        }
+                      }
+                    ]
+                  }
+                  DEF lf_kuan Shape {
+                    appearance Appearance {
+                      material Material {
+                        diffuseColor 0.447059 0.623529 0.811765
+                      }
+                    }
+                    geometry Capsule {
+                      height 0.02
+                      radius 0.02
+                    }
+                  }
+                ]
+                boundingObject USE lf_kuan
+                physics Physics {
+                }
+              }
+            }
+          ]
+        }
+        DEF body Shape {
+          appearance Appearance {
+            material Material {
+              diffuseColor 0.960784 0.47451 0
+              shininess 1
+              transparency 0.1
+            }
+          }
+          geometry Box {
+            size 0.2 0.4 0.05
+          }
+        }
+      ]
+      boundingObject Box {
+        size 0.2 0.4 0.05
+      }
+      physics Physics {
+        density -1
+        mass 4
+      }
+    }
+  ]
+  boundingObject USE body
+  physics Physics {
+  }
+  controller "pluto"
+}
